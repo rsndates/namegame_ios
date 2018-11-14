@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Darwin
 
 protocol NameGameDelegate: class {
     
@@ -18,12 +19,13 @@ class NameGame {
     
     private let numberPeople = 6
     private let url = "https://willowtreeapps.com/api/v1.0/profiles/"
-    
+    private let correctEmployees = Set<String>()
     
     // MARK: - Public Properties
     
     public weak var delegate: NameGameDelegate?
     public var employees: [Employee]!
+    
     
     // Load JSON data from API
     func loadGameData(completion: @escaping () -> Void) {
@@ -41,4 +43,25 @@ class NameGame {
             }
         }.resume()
     }
+}
+
+extension NameGame {
+
+    
+    public func chooseRandomEmployeeIndices() -> [Int]? {
+        guard self.employees != nil else { return nil }
+        let array = [Int](repeating: 0, count: 6)
+        var chosenIndices = Set<Int>()
+        let randomEmployeeIndices = array.map { (x) -> Int in
+            var randomIndex: Int!
+            repeat {
+                randomIndex = Int(arc4random_uniform(UInt32(self.employees.count)))
+                chosenIndices.insert(randomIndex)
+            } while (!chosenIndices.contains(randomIndex))
+
+            return randomIndex
+        }
+        return randomEmployeeIndices
+    }
+    
 }
