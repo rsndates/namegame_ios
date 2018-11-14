@@ -18,12 +18,13 @@ class NameGame {
     
     private let numberPeople = 6
     private let url = "https://willowtreeapps.com/api/v1.0/profiles/"
-    private var employees: [Employee]!
+    
     
     // MARK: - Public Properties
     
     public weak var delegate: NameGameDelegate?
-
+    public var employees: [Employee]!
+    
     // Load JSON data from API
     func loadGameData(completion: @escaping () -> Void) {
         guard let url = URL(string: self.url) else { return }
