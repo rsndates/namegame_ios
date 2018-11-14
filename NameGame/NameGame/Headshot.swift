@@ -10,10 +10,10 @@ import Foundation
 
 struct Headshot: Codable {
     var type: String
-    var mimeType: String
+    var mimeType: String?
     var id: String
-    var url: String
+    var url: String?
     var alt: String
-    var height: Int
-    var width: Int
+    var height: Int?
+    var width: Int?
 }

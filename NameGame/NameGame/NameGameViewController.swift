@@ -10,17 +10,28 @@ import UIKit
 
 class NameGameViewController: UIViewController {
 
+    // MARK: - IBOutlests
+    
     @IBOutlet weak var outerStackView: UIStackView!
     @IBOutlet weak var innerStackView1: UIStackView!
     @IBOutlet weak var innerStackView2: UIStackView!
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet var imageButtons: [FaceButton]!
+    
+    // MARK: - Public Properties
+    public var nameGame = NameGame()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let orientation: UIDeviceOrientation = self.view.frame.size.height > self.view.frame.size.width ? .portrait : .landscapeLeft
         configureSubviews(orientation)
+        self.nameGame.loadGameData {
+            print("finished fetching employee data")
+        }
+        
     }
 
     @IBAction func faceTapped(_ button: FaceButton) {

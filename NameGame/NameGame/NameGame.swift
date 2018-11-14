@@ -13,14 +13,31 @@ protocol NameGameDelegate: class {
 }
 
 class NameGame {
-
-    public weak var delegate: NameGameDelegate?
+    
+    // MARK: - Private Properties
+    
     private let numberPeople = 6
-
+    private let url = "https://willowtreeapps.com/api/v1.0/profiles/"
+    private var employees: [Employee]!
+    
+    // MARK: - Public Properties
+    
+    public weak var delegate: NameGameDelegate?
 
     // Load JSON data from API
     func loadGameData(completion: @escaping () -> Void) {
-        
-        
+        guard let url = URL(string: self.url) else { return }
+        let session = URLSession.shared
+        session.dataTask(with: url) { [weak self] (data:Data?, response: URLResponse?, error: Error?) in
+            guard let strongSelf = self else { return }
+            guard let data = data else { return }
+            do {
+                let employees = try JSONDecoder().decode([Employee].self, from: data)
+                strongSelf.employees = employees
+                completion()
+            } catch let error {
+                print(error)
+            }
+        }.resume()
     }
 }
