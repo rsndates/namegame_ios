@@ -9,17 +9,18 @@
 import Foundation
 
 protocol NameGameDelegate: class {
+    
 }
 
 class NameGame {
 
-    weak var delegate: NameGameDelegate?
-
-    let numberPeople = 6
+    public weak var delegate: NameGameDelegate?
+    private let numberPeople = 6
 
 
     // Load JSON data from API
     func loadGameData(completion: @escaping () -> Void) {
-
+        
+        
     }
 }
