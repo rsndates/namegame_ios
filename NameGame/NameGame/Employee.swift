@@ -19,4 +19,8 @@ struct Employee: Codable {
     var headshot: Headshot
     var socialLinks: [Social?]
     
+    func fullName() -> String {
+       return self.firstName + " " + self.lastName
+    }
+    
 }

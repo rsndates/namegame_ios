@@ -17,6 +17,9 @@
 		FA65D40E219BBD1C0059D45E /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D40D219BBD1C0059D45E /* Employee.swift */; };
 		FA65D411219BC18A0059D45E /* Headshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D410219BC18A0059D45E /* Headshot.swift */; };
 		FA65D413219BC4050059D45E /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D412219BC4050059D45E /* Social.swift */; };
+		FA65D418219BF4540059D45E /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D417219BF4540059D45E /* Utility.swift */; };
+		FA65D41B219CBEDE0059D45E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D419219CBEDE0059D45E /* MenuViewController.swift */; };
+		FA65D41C219CBEDE0059D45E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA65D41A219CBEDE0059D45E /* MenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		FA65D40D219BBD1C0059D45E /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		FA65D410219BC18A0059D45E /* Headshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headshot.swift; sourceTree = "<group>"; };
 		FA65D412219BC4050059D45E /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
+		FA65D417219BF4540059D45E /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		FA65D419219CBEDE0059D45E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		FA65D41A219CBEDE0059D45E /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +55,8 @@
 			isa = PBXGroup;
 			children = (
 				ECF50AB41C9331CA00C41A1D /* FaceButton.swift */,
+				FA65D419219CBEDE0059D45E /* MenuViewController.swift */,
+				FA65D41A219CBEDE0059D45E /* MenuViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -72,6 +80,7 @@
 		EC6A1AB51C8F6E5A0071F529 /* NameGame */ = {
 			isa = PBXGroup;
 			children = (
+				FA65D416219BF4270059D45E /* Helper */,
 				EC6A1AB61C8F6E5A0071F529 /* AppDelegate.swift */,
 				FA65D414219BC4F40059D45E /* Controllers */,
 				FA65D40F219BBD250059D45E /* Models */,
@@ -87,8 +96,8 @@
 		FA65D40F219BBD250059D45E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA65D40D219BBD1C0059D45E /* Employee.swift */,
 				03CE45601DD1302700ABF7FA /* NameGame.swift */,
+				FA65D40D219BBD1C0059D45E /* Employee.swift */,
 				FA65D410219BC18A0059D45E /* Headshot.swift */,
 				FA65D412219BC4050059D45E /* Social.swift */,
 			);
@@ -101,6 +110,14 @@
 				EC6A1AB81C8F6E5A0071F529 /* NameGameViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FA65D416219BF4270059D45E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FA65D417219BF4540059D45E /* Utility.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +152,7 @@
 				TargetAttributes = {
 					EC6A1AB21C8F6E5A0071F529 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 27DL2E7987;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -165,6 +183,7 @@
 				03909FE01DDE4ACE00C701A0 /* LaunchScreen.storyboard in Resources */,
 				EC6A1ABE1C8F6E5A0071F529 /* Assets.xcassets in Resources */,
 				EC6A1ABC1C8F6E5A0071F529 /* Main.storyboard in Resources */,
+				FA65D41C219CBEDE0059D45E /* MenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +197,8 @@
 				EC6A1AB91C8F6E5A0071F529 /* NameGameViewController.swift in Sources */,
 				EC6A1AB71C8F6E5A0071F529 /* AppDelegate.swift in Sources */,
 				03CE45611DD1302700ABF7FA /* NameGame.swift in Sources */,
+				FA65D418219BF4540059D45E /* Utility.swift in Sources */,
+				FA65D41B219CBEDE0059D45E /* MenuViewController.swift in Sources */,
 				FA65D40E219BBD1C0059D45E /* Employee.swift in Sources */,
 				ECF50AB51C9331CA00C41A1D /* FaceButton.swift in Sources */,
 				FA65D413219BC4050059D45E /* Social.swift in Sources */,
@@ -291,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 27DL2E7987;
 				INFOPLIST_FILE = NameGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.NameGame;
@@ -303,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 27DL2E7987;
 				INFOPLIST_FILE = NameGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.NameGame;
