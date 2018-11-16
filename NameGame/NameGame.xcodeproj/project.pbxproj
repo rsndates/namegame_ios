@@ -14,6 +14,10 @@
 		EC6A1ABC1C8F6E5A0071F529 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC6A1ABA1C8F6E5A0071F529 /* Main.storyboard */; };
 		EC6A1ABE1C8F6E5A0071F529 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC6A1ABD1C8F6E5A0071F529 /* Assets.xcassets */; };
 		ECF50AB51C9331CA00C41A1D /* FaceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF50AB41C9331CA00C41A1D /* FaceButton.swift */; };
+		FA039038219EBD2700E6742A /* NameGameViewController+MenuActionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA039037219EBD2700E6742A /* NameGameViewController+MenuActionProtocol.swift */; };
+		FA03903A219EBF8D00E6742A /* NameGameViewController+NameGameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA039039219EBF8D00E6742A /* NameGameViewController+NameGameDelegate.swift */; };
+		FA03903C219EBFEE00E6742A /* NameGameViewController+SimpleTimerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03903B219EBFEE00E6742A /* NameGameViewController+SimpleTimerProtocol.swift */; };
+		FA03903E219EC04300E6742A /* NameGameViewController+FaceButtonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA03903D219EC04300E6742A /* NameGameViewController+FaceButtonProtocol.swift */; };
 		FA65D40E219BBD1C0059D45E /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D40D219BBD1C0059D45E /* Employee.swift */; };
 		FA65D411219BC18A0059D45E /* Headshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D410219BC18A0059D45E /* Headshot.swift */; };
 		FA65D413219BC4050059D45E /* Social.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA65D412219BC4050059D45E /* Social.swift */; };
@@ -32,6 +36,10 @@
 		EC6A1ABD1C8F6E5A0071F529 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC6A1AC21C8F6E5A0071F529 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECF50AB41C9331CA00C41A1D /* FaceButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceButton.swift; sourceTree = "<group>"; };
+		FA039037219EBD2700E6742A /* NameGameViewController+MenuActionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameGameViewController+MenuActionProtocol.swift"; sourceTree = "<group>"; };
+		FA039039219EBF8D00E6742A /* NameGameViewController+NameGameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameGameViewController+NameGameDelegate.swift"; sourceTree = "<group>"; };
+		FA03903B219EBFEE00E6742A /* NameGameViewController+SimpleTimerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameGameViewController+SimpleTimerProtocol.swift"; sourceTree = "<group>"; };
+		FA03903D219EC04300E6742A /* NameGameViewController+FaceButtonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NameGameViewController+FaceButtonProtocol.swift"; sourceTree = "<group>"; };
 		FA65D40D219BBD1C0059D45E /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		FA65D410219BC18A0059D45E /* Headshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headshot.swift; sourceTree = "<group>"; };
 		FA65D412219BC4050059D45E /* Social.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Social.swift; sourceTree = "<group>"; };
@@ -92,6 +100,18 @@
 			path = NameGame;
 			sourceTree = "<group>";
 		};
+		FA03903F219EC0D800E6742A /* NameGameViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EC6A1AB81C8F6E5A0071F529 /* NameGameViewController.swift */,
+				FA039037219EBD2700E6742A /* NameGameViewController+MenuActionProtocol.swift */,
+				FA039039219EBF8D00E6742A /* NameGameViewController+NameGameDelegate.swift */,
+				FA03903B219EBFEE00E6742A /* NameGameViewController+SimpleTimerProtocol.swift */,
+				FA03903D219EC04300E6742A /* NameGameViewController+FaceButtonProtocol.swift */,
+			);
+			name = NameGameViewController;
+			sourceTree = "<group>";
+		};
 		FA65D40F219BBD250059D45E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,8 +126,8 @@
 		FA65D414219BC4F40059D45E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA03903F219EC0D800E6742A /* NameGameViewController */,
 				FA65D419219CBEDE0059D45E /* MenuViewController.swift */,
-				EC6A1AB81C8F6E5A0071F529 /* NameGameViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -152,7 +172,6 @@
 				TargetAttributes = {
 					EC6A1AB21C8F6E5A0071F529 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 27DL2E7987;
 						LastSwiftMigration = 1000;
 					};
 				};
@@ -195,12 +214,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC6A1AB91C8F6E5A0071F529 /* NameGameViewController.swift in Sources */,
+				FA03903E219EC04300E6742A /* NameGameViewController+FaceButtonProtocol.swift in Sources */,
 				EC6A1AB71C8F6E5A0071F529 /* AppDelegate.swift in Sources */,
 				03CE45611DD1302700ABF7FA /* NameGame.swift in Sources */,
 				FA65D418219BF4540059D45E /* Utility.swift in Sources */,
 				FA65D41B219CBEDE0059D45E /* MenuViewController.swift in Sources */,
+				FA03903A219EBF8D00E6742A /* NameGameViewController+NameGameDelegate.swift in Sources */,
 				FA65D40E219BBD1C0059D45E /* Employee.swift in Sources */,
+				FA039038219EBD2700E6742A /* NameGameViewController+MenuActionProtocol.swift in Sources */,
 				ECF50AB51C9331CA00C41A1D /* FaceButton.swift in Sources */,
+				FA03903C219EBFEE00E6742A /* NameGameViewController+SimpleTimerProtocol.swift in Sources */,
 				FA65D413219BC4050059D45E /* Social.swift in Sources */,
 				FA65D411219BC18A0059D45E /* Headshot.swift in Sources */,
 			);
@@ -328,7 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 27DL2E7987;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NameGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.NameGame;
@@ -342,7 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 27DL2E7987;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NameGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.NameGame;

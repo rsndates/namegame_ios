@@ -72,9 +72,12 @@ class NameGameViewController: UIViewController {
     @IBAction func faceTapped(_ button: FaceButton) {
         if let buttonIndex = imageButtons.index(of: button),
             self.currentEmployees[buttonIndex].fullName() == self.questionLabel.text {
+            
+            //Tracks elapsed time to guess the correct answer
             let elapsedTime = Date().timeIntervalSince(self.startTime)
             self.nameGame.guessTimeArray.append(elapsedTime)
             self.avgTimeLabel?.text = String(format: "%.1f sec", elapsedTime)
+            // Show loader icon between batches of employees
             LoaderController.sharedInstance.showLoader()
             button.tintView.backgroundColor = UIColor(red: 64/255, green: 232/255, blue: 211/255, alpha: 0.6)
             button.tintView.alpha = 1.0
@@ -124,6 +127,9 @@ class NameGameViewController: UIViewController {
     
     // MARK: - Private Methods
     
+    /// Configure view based on orientation of the device
+    ///
+    /// - Parameter orientation: landscape or portrait
     private func configureSubviews(_ orientation: UIDeviceOrientation) {
         if orientation.isLandscape {
             outerStackView.axis = .vertical
@@ -140,6 +146,7 @@ class NameGameViewController: UIViewController {
     
     // MARK: - Public Methods
     
+    /// Once a user has seen correctly guess every employee once this is fired
     public func showCompletionAlert() {
         let alertController = UIAlertController(title: "Congrats!!!", message: "You have matched everyone.", preferredStyle: UIAlertController.Style.alert)
         
@@ -191,88 +198,5 @@ class NameGameViewController: UIViewController {
     public func resetScoreLabels() {
         self.hitsLabel.text = "0"
         self.missesLabel.text = "0"
-    }
-}
-
-extension NameGameViewController: MenuActionProtocol {
-    public func resetGame(to gameMode: NameGame.Mode) {
-        if gameMode != .hint { self.hintModeReset() }
-        self.resetScoreLabels()
-        self.nameGame.resetGame(with: gameMode)
-    }
-    
-    public func hintModeReset() {
-        self.timer.stopTimer()
-        self.imageButtons.forEach({ (button) in
-            button.imageView?.alpha = 1.0
-        })
-    }
-}
-
-extension NameGameViewController: NameGameDelegate {
-    /// Grabs 6 randomly chosen employees
-    ///
-    /// - Parameter employees: array of employees
-    public func displayNewBatch(of employees: [Employee]) {
-        self.currentEmployees = employees
-        let randomIndex = Int(arc4random_uniform(UInt32(6)))
-        self.outerStackView.alpha = 0.0
-        for pair in zip(imageButtons, employees).enumerated() {
-            
-            pair.element.0.showUsersFace(employee: pair.element.1, group: self.group)
-        }
-        group.notify(queue: .main) {
-            UIView.animate(withDuration: 0.4, animations: {
-                self.outerStackView.alpha = 1.0
-            })
-            self.questionLabel.text? = employees[randomIndex].fullName()
-            sleep(UInt32(0.7))
-            LoaderController.sharedInstance.removeLoader()
-            self.startTime = Date()
-            if self.nameGame.gameMode == .hint {
-                self.startFaceButtonDissapearingTimer()
-            }
-        }
-    }
-    
-    public func startFaceButtonDissapearingTimer() {
-        timer.delegate = self
-        timer.startTimer()
-    }
-    
-    /// Selects a qualifiiying faceButton to hide
-    public func hideFaceButtonImage() {
-        for button in imageButtons {
-            if let buttonIndex = imageButtons.index(of: button),
-                self.currentEmployees[buttonIndex].fullName() != self.questionLabel.text,
-                button.imageView?.alpha != 0.0 {
-                button.imageView?.alpha = 0.0
-                button.layer.borderWidth = 0
-                break
-            }
-        }
-    }
-}
-
-extension NameGameViewController: SimpleTimerProtocol {
-    public func timerHandler() {
-        hideFaceButtonImage()
-    }
-}
-
-extension NameGameViewController: FaceButtonProtocol {
-    func exploreEmpoyeeSocial(social: Social) {
-        guard let url = URL(string: social.url) else { return }
-        if #available(iOS 10.0, *) {
-            UIApplication.shared.open(url)
-        } else {
-            // Fallback on earlier versions
-            let alertController = UIAlertController(title: "Oops", message: "This feature is only supported for iOS 10.0+", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction) -> Void in
-                alertController.dismiss(animated: true, completion: nil)
-            })
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true, completion: nil)
-        }
     }
 }

@@ -35,19 +35,19 @@ open class FaceButton: UIButton {
         longPressGesture.minimumPressDuration = 0.7
         self.addGestureRecognizer(longPressGesture)
         
-        layer.cornerRadius = 5
+        self.layer.cornerRadius = 5
         
-        setTitleColor(.white, for: .normal)
-        titleLabel?.alpha = 0.0
+        self.setTitleColor(.white, for: .normal)
+        self.titleLabel?.alpha = 0.0
         
-        tintView.alpha = 0.0
-        tintView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(tintView)
+        self.tintView.alpha = 0.0
+        self.tintView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(tintView)
         
-        tintView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        tintView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-        tintView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        tintView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        self.tintView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        self.tintView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        self.tintView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        self.tintView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
     }
     
