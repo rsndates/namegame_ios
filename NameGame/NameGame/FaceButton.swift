@@ -51,7 +51,7 @@ open class FaceButton: UIButton {
         
     }
     
-    public func handleLongPress(_ longPress: UILongPressGestureRecognizer!)  {
+    @objc public func handleLongPress(_ longPress: UILongPressGestureRecognizer!)  {
         if let social = self.employee.socialLinks.first as? Social, self.delegate != nil {
             self.delegate.exploreEmpoyeeSocial(social: social)
         }

@@ -141,9 +141,9 @@ class NameGameViewController: UIViewController {
     // MARK: - Public Methods
     
     public func showCompletionAlert() {
-        let alertController = UIAlertController(title: "Congrats!!!", message: "You have matched everyone.", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Congrats!!!", message: "You have matched everyone.", preferredStyle: UIAlertController.Style.alert)
         
-        let OKAction = UIAlertAction(title: "New Game", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction) -> Void in
+        let OKAction = UIAlertAction(title: "New Game", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction) -> Void in
             self.resetGame(to: self.nameGame.gameMode)
         })
         
@@ -174,7 +174,7 @@ class NameGameViewController: UIViewController {
     
     public func showAlertController(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let OKAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction) -> Void in
+        let OKAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction) -> Void in
             alertController.dismiss(animated: true, completion: nil)
         })
         alertController.addAction(OKAction)
@@ -268,7 +268,7 @@ extension NameGameViewController: FaceButtonProtocol {
         } else {
             // Fallback on earlier versions
             let alertController = UIAlertController(title: "Oops", message: "This feature is only supported for iOS 10.0+", preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: {(action: UIAlertAction) -> Void in
+            let OKAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action: UIAlertAction) -> Void in
                 alertController.dismiss(animated: true, completion: nil)
             })
             alertController.addAction(OKAction)

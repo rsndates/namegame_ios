@@ -108,7 +108,7 @@ class LoaderController: NSObject {
     private func setupLoader() {
         removeLoader()
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = .gray
+        activityIndicator.style = .gray
     }
     
     // MARK: - Public Methods
