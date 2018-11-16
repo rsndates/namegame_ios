@@ -11,6 +11,12 @@ import UIKit
 
 public struct Networking {
     
+    /// Network request for images
+    ///
+    /// - Parameters:
+    ///   - url: url of image
+    ///   - completion: execute this block on main thread after data is received
+    
     static func imageRequest(url: URL, completion: @escaping (_ data:Data) -> Void) {
         let session = URLSession.shared
         session.dataTask(with: url) { (data:Data?, response: URLResponse?, error: Error?) in
@@ -22,8 +28,14 @@ public struct Networking {
             DispatchQueue.main.async {
                 completion(data)
             }
-        }.resume()
+            }.resume()
     }
+    
+    /// Network request for game data
+    ///
+    /// - Parameters:
+    ///   - url: url of data
+    ///   - completion: execute this block on main thread after data is received
     
     static func requestGameData(url: URL, completion: @escaping (_ data:Data) -> Void) {
         let session = URLSession.shared
@@ -40,14 +52,20 @@ public struct Networking {
     }
 }
 
+/// Allow an adopter to handle the timer firing
 protocol SimpleTimerProtocol: NSObjectProtocol {
     func timerHandler()
 }
 
 public class SimpleTimer {
+    
+    // MARK: - Properties
     private weak var timer: Timer?
+    public var count = 0
     var delegate: SimpleTimerProtocol!
-    var count = 0
+    
+    // MARK: - Methods
+    
     deinit {
         timer?.invalidate()
     }
@@ -58,8 +76,7 @@ public class SimpleTimer {
     }
     
     func startTimer() {
-        timer?.invalidate()   // stops previous timer, if any
-        
+        timer?.invalidate()
         let seconds = 2.0
         if #available(iOS 10.0, *) {
             timer = Timer.scheduledTimer(withTimeInterval: seconds, repeats: true) { timer in
@@ -68,12 +85,8 @@ public class SimpleTimer {
                 if(self.count == 5){
                     self.stopTimer()
                 }
-                
             }
-        } else {
-            // Fallback on earlier versions
         }
-        
     }
     
     func stopTimer() {
@@ -82,19 +95,24 @@ public class SimpleTimer {
     }
 }
 
+/// Displays a loading indicator in the middle of the screen
 class LoaderController: NSObject {
+    
+    // MARK: - Properties
     
     static let sharedInstance = LoaderController()
     private let activityIndicator = UIActivityIndicatorView()
     
-    //MARK: - Private Methods -
+    // MARK: - Private Methods
+    
     private func setupLoader() {
         removeLoader()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.activityIndicatorViewStyle = .gray
     }
     
-    //MARK: - Public Methods -
+    // MARK: - Public Methods
+    
     func showLoader() {
         setupLoader()
         let appDel = UIApplication.shared.delegate as! AppDelegate
@@ -104,7 +122,6 @@ class LoaderController: NSObject {
             self.activityIndicator.center = holdingView.center
             self.activityIndicator.startAnimating()
             holdingView.addSubview(self.activityIndicator)
-            //UIApplication.shared.beginIgnoringInteractionEvents()
         }
     }
     
@@ -112,7 +129,7 @@ class LoaderController: NSObject {
         DispatchQueue.main.async {
             self.activityIndicator.stopAnimating()
             self.activityIndicator.removeFromSuperview()
-            //UIApplication.shared.endIgnoringInteractionEvents()
         }
     }
 }
+

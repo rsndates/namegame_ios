@@ -33,7 +33,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EA9-A5-9wD" userLabel="Inner Stack View 1">
                                         <rect key="frame" x="0.0" y="0.0" width="164" height="458"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGv-0C-ewu" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FGv-0C-ewu" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="164" height="164"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="FGv-0C-ewu" secondAttribute="height" multiplier="1:1" priority="998" id="aBx-Yy-25R"/>
@@ -43,7 +43,7 @@
                                                     <action selector="faceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T0X-ga-X94"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-si-bP2" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-si-bP2" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="179" width="164" height="164"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="qlO-si-bP2" secondAttribute="height" multiplier="1:1" priority="999" id="aiT-Qv-AU6"/>
@@ -54,7 +54,7 @@
                                                     <action selector="faceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aCs-fq-4gM"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9V-c5-o1r" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="249" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9V-c5-o1r" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
                                                 <rect key="frame" x="32" y="358" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="m9V-c5-o1r" secondAttribute="height" multiplier="1:1" priority="998" id="ZgB-UY-UAw"/>
@@ -93,7 +93,7 @@
                                                     <action selector="faceTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vcn-hA-MTq"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-Aa-9vE" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="TopLeft" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-Aa-9vE" customClass="FaceButton" customModule="NameGame" customModuleProvider="target">
                                                 <rect key="frame" x="32" y="358" width="100" height="100"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ljo-Aa-9vE" secondAttribute="height" multiplier="1:1" priority="998" id="Ndx-b5-Keu"/>
@@ -178,7 +178,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last: 0.0 sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObY-4R-M8z">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 0.0 sec" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObY-4R-M8z">
                                 <rect key="frame" x="0.0" y="80" width="375" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <color key="textColor" red="0.19556843709999999" green="0.91198093599999996" blue="0.82883567120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

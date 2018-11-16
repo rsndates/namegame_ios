@@ -55,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				ECF50AB41C9331CA00C41A1D /* FaceButton.swift */,
-				FA65D419219CBEDE0059D45E /* MenuViewController.swift */,
 				FA65D41A219CBEDE0059D45E /* MenuViewController.xib */,
 			);
 			name = Views;
@@ -81,10 +80,10 @@
 			isa = PBXGroup;
 			children = (
 				FA65D416219BF4270059D45E /* Helper */,
-				EC6A1AB61C8F6E5A0071F529 /* AppDelegate.swift */,
 				FA65D414219BC4F40059D45E /* Controllers */,
 				FA65D40F219BBD250059D45E /* Models */,
 				0390A0101DDE529600C701A0 /* Views */,
+				EC6A1AB61C8F6E5A0071F529 /* AppDelegate.swift */,
 				EC6A1ABA1C8F6E5A0071F529 /* Main.storyboard */,
 				EC6A1ABD1C8F6E5A0071F529 /* Assets.xcassets */,
 				EC6A1AC21C8F6E5A0071F529 /* Info.plist */,
@@ -107,6 +106,7 @@
 		FA65D414219BC4F40059D45E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA65D419219CBEDE0059D45E /* MenuViewController.swift */,
 				EC6A1AB81C8F6E5A0071F529 /* NameGameViewController.swift */,
 			);
 			name = Controllers;

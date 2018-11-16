@@ -17,3 +17,4 @@ struct Headshot: Codable {
     var height: Int?
     var width: Int?
 }
+

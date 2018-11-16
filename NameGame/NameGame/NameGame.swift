@@ -44,7 +44,7 @@ class NameGame {
         case reverse = "re"
         case hint = "hi"
         case team = "te"
-
+        
     }
     
     // MARK: - Public Methods
@@ -67,7 +67,7 @@ class NameGame {
     }
     
     public func loadGameData(completion: @escaping () -> Void) {
-        guard let url = URL(string: self.url) else { return }        
+        guard let url = URL(string: self.url) else { return }
         Networking.requestGameData(url: url) { [weak self] (data:Data) in
             guard let strongSelf = self else { return }
             do {
@@ -91,16 +91,16 @@ extension NameGame {
         }
         return Array(uniqueNumbers).shuffle
     }
-
+    
     public func chooseRandomEmployees()  {
         guard self.employees != nil else { return }
         switch (self.gameMode) {
         case .willowtree, .reverse, .hint:
-            self.filteredEmployees = self.employees.filter({ $0.jobTitle != nil})
+            self.filteredEmployees = self.employees.filter({ $0.jobTitle != nil && $0.headshot.url != nil && $0.headshot.alt.lowercased().contains($0.firstName.lowercased())})
         case .matt:
-            self.filteredEmployees = self.employees.filter({ $0.firstName.lowercased().hasPrefix("mat")})
+            self.filteredEmployees = self.employees.filter({ $0.firstName.lowercased().hasPrefix("mat") && $0.headshot.url != nil && $0.headshot.alt.lowercased().contains($0.firstName.lowercased())})
         case .team:
-            self.filteredEmployees = self.employees
+            self.filteredEmployees = self.employees.filter({$0.headshot.url != nil && $0.headshot.alt.lowercased().contains($0.firstName.lowercased())})
         }
         let randomIndices:[Int] = uniqueRandomNumbers(totalRandoms: 6, minimum: 0, maximum: UInt32(self.filteredEmployees.count-1))
         let employeeArray = randomIndices.map { (index) -> Employee in
@@ -123,3 +123,4 @@ extension Array {
         return elements
     }
 }
+

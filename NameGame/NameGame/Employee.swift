@@ -20,7 +20,8 @@ struct Employee: Codable {
     var socialLinks: [Social?]
     
     func fullName() -> String {
-       return self.firstName + " " + self.lastName
+        return self.firstName + " " + self.lastName
     }
     
 }
+
