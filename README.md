@@ -15,8 +15,16 @@ Present the user with six faces and ask them to identify the listed name. To spr
 4. Hint mode. As people wait, faces disappear until only the correct one is left.
 5. Team mode. The api returns people who used to work here too. Current team members have titles and former team members don't.
 5. Insert your own idea here!
+6. Social long press on images. i.e. A user can perform a long press on a photo and will be shown social information if it was provided.`
+7. Helpful in game hints.
 
 
 ## Conclusion
+I was able to implement most of the functionality specified in the specs above. However, I chose not to implement the reverse function, but instead implemented two additional features.  The social long press feature as well as helpful hints.  I think these two feature are great additions to the project, and there are plenty more of ideas such as scoreboards, monetization, limited amount of misses, and many more.
+
+I chose to utilize the skeleton, because it could showcase my ability to continue from another developer/engineers work.  I feel like its really important to be have such a skill due to team collaboration.  I enjoyed working on this project and it is a great way to learn who works at WillowTree.   
+
+
+
 
 We have provided you with a skeleton to get you started.
