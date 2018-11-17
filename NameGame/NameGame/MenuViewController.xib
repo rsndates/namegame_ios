@@ -134,7 +134,7 @@
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="gameModeTapped:" destination="-1" eventType="touchUpInside" id="Gqm-CX-5oI"/>
+                                                <action selector="gameModeTapped:" destination="-1" eventType="touchUpInside" id="cCc-5d-qwo"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOF-2h-8fd">

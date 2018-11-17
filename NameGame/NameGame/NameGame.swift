@@ -92,11 +92,11 @@ class NameGame {
         guard self.employees != nil else { return }
         switch (self.gameMode) {
         case .willowtree, .reverse, .hint:
-            self.filteredEmployees = self.employees.filter({ $0.jobTitle != nil && $0.headshot.url != nil && $0.headshot.alt.lowercased().contains($0.firstName.lowercased())})
+            self.filteredEmployees = self.employees.filter({ $0.jobTitle != nil && $0.headshot.url != nil && $0.headshot.alt.lowercased().contains("headshot")})
         case .matt:
-            self.filteredEmployees = self.employees.filter({ $0.firstName.lowercased().hasPrefix("mat") && $0.headshot.url != nil && $0.headshot.alt.lowercased().contains($0.firstName.lowercased())})
+            self.filteredEmployees = self.employees.filter({ $0.firstName.lowercased().hasPrefix("mat") && $0.headshot.url != nil && $0.headshot.alt.lowercased().contains("headshot")})
         case .team:
-            self.filteredEmployees = self.employees.filter({$0.headshot.url != nil && $0.headshot.alt.lowercased().contains($0.firstName.lowercased())})
+            self.filteredEmployees = self.employees.filter({$0.headshot.url != nil && $0.headshot.alt.lowercased().contains("headshot")})
         }
         let randomIndices:[Int] = uniqueRandomNumbers(totalRandoms: 6, minimum: 0, maximum: UInt32(self.filteredEmployees.count-1))
         let employeeArray = randomIndices.map { (index) -> Employee in
